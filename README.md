@@ -1,4 +1,4 @@
-# Projeto Banco Senac PE
+# Projeto Banco
 
 Este projeto é uma estrutura de exemplo em Java para a simulação de um sistema bancário. Ele foi desenvolvido utilizando princípios básicos da orientação a objetos (POO) para demonstrar o funcionamento de entidades como cliente, conta bancária, agência e endereço.
 
