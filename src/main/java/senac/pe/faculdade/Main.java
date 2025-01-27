@@ -63,6 +63,16 @@ public class Main {
         );
         System.out.println(miguel);
 
+        Cliente charles = new Cliente(
+                "Charles",
+                "144.444.789-00",
+                endMiguel,
+                new Date(95, 06, 16),
+                123456789,
+                "miguel@email.com",
+                "(81)92323-2323"
+        );
+
         Conta contaMiguel = new Conta(
                 miguel,
                 78544,
@@ -71,7 +81,20 @@ public class Main {
                 1400,
                 true
         );
+
+        Conta contaCharles = new Conta(
+                charles,
+                58544,
+                agSenac,
+                new Date(98, 01, 20),
+                1400,
+                true
+        );
+
         System.out.println(contaMiguel.depositar(200));
         System.out.println(contaMiguel.sacar(100));
+        contaCharles.transferir(400, contaMiguel);
+
+        System.out.println(contaCharles.imprimirExtrato());
     }
 }

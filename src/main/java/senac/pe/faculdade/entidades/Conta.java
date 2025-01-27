@@ -102,7 +102,23 @@ public class Conta {
         }
     }
 
-    //realizarPix
-
     //imprimirExtrato
+    public String imprimirExtrato() {
+        String extrato = this.toString();
+        if (this.transacoes.size() > 0) {
+            extrato += "Data \t\t\t\t\t\t\t Lançamentos \t Agência/Conta \t Valor(R$)\n";
+            extrato += "---------------------------------------------------------------------------- \n";
+            for (Transacao transacao : this.transacoes) {
+            extrato += transacao.toString() + "\n";
+            }
+        }
+        return extrato;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Agência: " + this.agencia.getNumero() + " / Conta: " + this.getNumero() + " / Saldo(R$): " + this.saldo + "\n" +
+                "---------------------------------------------------------------------------- \n";
+    }
 }

@@ -48,4 +48,14 @@ public class Transacao {
     public char getTipoValor() {
         return tipoValor;
     }
+
+    @Override
+    public String toString() {
+        return this.data.toLocaleString() + " \t " + this.tipo + " \t " +
+                (this.tipo.equals(TipoTransacao.TRANSFERENCIA) ?
+                        this.contaTransferencia.getAgencia().getNumero() +
+                                "/" + this.contaTransferencia.getNumero() :
+                        "    \t") + " \t " +
+                (this.tipoValor == '-' ? this.tipoValor : "") +this.valor;
+    }
 }
