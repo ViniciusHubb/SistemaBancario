@@ -72,5 +72,6 @@ public class Main {
                 true
         );
         System.out.println(contaMiguel.depositar(200));
+        System.out.println(contaMiguel.sacar(100));
     }
 }

@@ -89,6 +89,18 @@ public class Conta {
     }
 
     //transferir
+    public boolean transferir(double valor, Conta contaDestino) {
+        if (valor > 0 && valor <= this.saldo && contaDestino != null) {
+            this.saldo -= valor;
+            this.transacoes.add(new Transacao(TipoTransacao.TRANSFERENCIA,
+                    valor, new Date(), contaDestino, '-'));
+            contaDestino.saldo += valor;
+            contaDestino.transacoes.add(new Transacao(TipoTransacao.TRANSFERENCIA, valor, new Date(), this, '+'));
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     //realizarPix
 
