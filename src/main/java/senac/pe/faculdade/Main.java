@@ -1,10 +1,8 @@
 package senac.pe.faculdade;
 
-import senac.pe.faculdade.entidades.Cliente;
-import senac.pe.faculdade.entidades.Endereco;
-import senac.pe.faculdade.entidades.Agencia;
+import senac.pe.faculdade.entidades.*;
+
 import java.util.Date;
-import senac.pe.faculdade.entidades.Conta;
 
 public class Main {
     public static void main(String[] args) {
@@ -73,22 +71,24 @@ public class Main {
                 "(81)92323-2323"
         );
 
-        Conta contaMiguel = new Conta(
+        Conta contaMiguel = new ContaCorrente(
                 miguel,
                 78544,
                 agSenac,
                 new Date(98, 01, 20),
                 1400,
-                true
+                true,
+                2500
         );
 
-        Conta contaCharles = new Conta(
+        Conta contaCharles = new Poupanca(
                 charles,
                 58544,
                 agSenac,
                 new Date(98, 01, 20),
                 1400,
-                true
+                true,
+                2.05
         );
 
         System.out.println(contaMiguel.depositar(200));

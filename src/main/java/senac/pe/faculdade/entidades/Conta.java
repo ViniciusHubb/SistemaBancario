@@ -3,15 +3,15 @@ package senac.pe.faculdade.entidades;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Conta {
+public abstract class Conta {
     //atributos
     private Cliente cliente;
     private int numero;
     private Agencia agencia;
     private Date dataAbertura;
-    private double saldo;
+    protected double saldo;
     private boolean status;
-    private ArrayList<Transacao> transacoes;
+    protected ArrayList<Transacao> transacoes;
 
     public Conta(Cliente cliente, int numero, Agencia agencia, Date dataAbertura, double saldo, boolean status) {
         this.cliente = cliente;
@@ -103,7 +103,7 @@ public class Conta {
     }
 
     //imprimirExtrato
-    public String imprimirExtrato() {
+    public final String imprimirExtrato() {
         String extrato = this.toString();
         if (this.transacoes.size() > 0) {
             extrato += "Data \t\t\t\t\t\t\t Lançamentos \t Agência/Conta \t Valor(R$)\n";
